@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    padding: 15px;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-centered {
+    background-color: white;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    padding: 12px 25px;
+    margin-bottom: 30px;
+}
+
+.header-centered h1 {
+    color: #4a90e2;
+    font-size: 2.2em;
+    font-weight: normal;
+    font-family: Arial, sans-serif;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.mascot-area {
+    text-align: center;
+}
+
+.mascot-image {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.mascot-image:hover {
+    transform: scale(1.05);
+}
+
+.description-pill {
+    background-color: #4CAF50;
+    border-radius: 50px;
+    padding: 15px 40px;
+    text-align: center;
+}
+
+.description-pill p {
+    color: white;
+    font-size: 1.1em;
+    font-weight: 500;
+    font-family: Arial, sans-serif;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.start-btn {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 50px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.start-btn:hover {
+    background-color: #357abd;
+    transform: translateY(-2px);
+}
+
+.start-btn:active {
+    transform: translateY(1px);
+}
+
+@media (max-width: 768px) {
+    .header-centered h1 {
+        font-size: 1.8em;
+    }
+
+    .mascot-image {
+        width: 200px;
+        height: 200px;
+    }
+}
