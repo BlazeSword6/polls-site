@@ -111,6 +111,7 @@ body {
 .instruction-row {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 10px;
     margin-bottom: 15px;
 }
@@ -142,6 +143,7 @@ body {
     color: #666;
     font-size: 0.95em;
     margin: 0;
+    flex: 1;
 }
 
 /* Form Elements */
@@ -335,6 +337,7 @@ body {
     width: 30px;
     height: 30px;
     transition: opacity 0.2s ease;
+    z-index: 1;
 }
 
 .close-overlay-btn:hover {
