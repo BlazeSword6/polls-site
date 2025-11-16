@@ -4,87 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sample Webapp</title>
-    
-    <!-- 1. Link to the external CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- Main Webapp Container -->
-    <div class="webapp-container">
-    
-        <!-- Top Row: Title -->
-        <div class="title-container">
-             <div class="title-box">
-                <h1>Sample Webapp</h1>
-             </div>
+    <div class="container">
+        <div class="header">
+            <h1>Sample Webapp</h1>
         </div>
 
-        <!-- Main Content Grid -->
-        <div class="main-content-grid">
-
-            <!-- Left Column: Image + Description -->
+        <div class="content-wrapper">
             <div class="left-column">
-                
-                <!-- Image Placeholder -->
-                <div class="image-placeholder">
-                   <!-- 
-                     REPLACE THIS SRC: 
-                     Put your own image link in the src="" attribute below.
-                   -->
-                   <img src="https://placehold.co/256x256/E0E7FF/4F46E5?text=Your+Icon+Here" 
-                        alt="Placeholder Icon">
+                <div class="mascot-area">
+                    <img src="placeholder-mascot.png" alt="Mascot" class="mascot-image">
                 </div>
-                
-                <!-- Description Banner -->
-                <div class="description-banner">
-                    One line of description about purpose here
+
+                <div class="description-pill">
+                    <p>One line of description about purpose here</p>
                 </div>
             </div>
 
-            <!-- Right Column: Steps + Button -->
             <div class="right-column">
-                
-                <!-- Step 1 Card -->
-                <div class="step-card">
-                    <div class="step-header">
-                        <h2>1: Configure</h2>
+                <div class="steps-grid">
+                    <div class="step-bubble">
+                        <div class="bubble-header">1: Configure</div>
+                        <div class="bubble-content">
+                            <p>Upload your PDF/Keyword Excel files to the designated SharePoint Folder.</p>
+                        </div>
                     </div>
-                    <div class="step-body">
-                        <p>Upload your PDF/Keyword Excel files to the designated SharePoint Folder.</p>
+
+                    <div class="step-bubble">
+                        <div class="bubble-header">2: Refresh Files List</div>
+                        <div class="bubble-content">
+                            <p>After uploading your desired files, click on the Refresh File List Button.</p>
+                        </div>
+                    </div>
+
+                    <div class="step-bubble">
+                        <div class="bubble-header">3: Run Analysis</div>
+                        <div class="bubble-content">
+                            <p>Go to 'The Tool' tab, check the file list, and click the 'Run Tool' button.</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Step 2 Card -->
-                <div class="step-card">
-                    <div class="step-header">
-                        <h2>2: Refresh Files List</h2>
-                    </div>
-                    <div class="step-body">
-                        <p>After uploading your desired files, click on the Refresh File List Button.</p>
-                    </div>
+                <div class="button-container">
+                    <button class="start-btn">Start</button>
                 </div>
-
-                <!-- Step 3 Card -->
-                <div class="step-card">
-                    <div class="step-header">
-                        <h2>3: Run Analysis</h2>
-                    </div>
-                    <div class="step-body">
-                        <p>Go to 'The Tool' tab, check the file list, and click the 'Run Tool' button.</p>
-                    </div>
-                </div>
-
-                <!-- Start Button -->
-                <div class="start-button-container">
-                    <button class="start-button">
-                        Start
-                    </button>
-                </div>
-
             </div>
         </div>
     </div>
-
 </body>
 </html>
