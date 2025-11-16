@@ -79,23 +79,26 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 45px;
+    height: 45px;
+    box-sizing: border-box;
 }
 
-.close-btn {
+.clear-btn {
     background-color: rgba(255, 255, 255, 0.2);
     color: white;
     border: 1px solid white;
-    padding: 5px 15px;
+    padding: 4px 12px;
     border-radius: 4px;
     cursor: pointer;
     font-family: Arial, sans-serif;
-    font-size: 0.9em;
+    font-size: 0.85em;
     transition: background-color 0.2s ease;
     flex-shrink: 0;
+    height: 28px;
+    line-height: 1;
 }
 
-.close-btn:hover {
+.clear-btn:hover {
     background-color: rgba(255, 255, 255, 0.3);
 }
 
