@@ -27,8 +27,8 @@
                 </div>
                 <div class="panel-body">
                     <div class="instruction-row">
-                        <button class="help-btn" onclick="openOverlay('overlay1')">?</button>
                         <p class="instruction-text">Step 1: Insert the engagement info below and click submit</p>
+                        <button class="help-btn" id="help-btn-1">?</button>
                     </div>
                     
                     <div class="form-group">
@@ -63,8 +63,8 @@
                 </div>
                 <div class="panel-body">
                     <div class="instruction-row">
-                        <button class="help-btn" onclick="openOverlay('overlay2')">?</button>
                         <p class="instruction-text">Step 2: Double click the key business risk below to generate the controls</p>
+                        <button class="help-btn" id="help-btn-2">?</button>
                     </div>
                     
                     <div class="risk-box">
@@ -99,7 +99,7 @@
     <!-- Overlay 1: Engagement Information Help -->
     <div id="overlay1" class="overlay">
         <div class="overlay-content">
-            <button class="close-overlay-btn" onclick="closeOverlay('overlay1')">×</button>
+            <button class="close-overlay-btn" id="close-overlay-1">×</button>
             <div class="overlay-header">Step 1: Configure</div>
             <div class="overlay-body">
                 <p>Upload your engagement information by filling in the required fields: Country, Audit title, and Audit objectives. Once completed, click the Submit button to proceed.</p>
@@ -110,7 +110,7 @@
     <!-- Overlay 2: Key Business Risk Help -->
     <div id="overlay2" class="overlay">
         <div class="overlay-content">
-            <button class="close-overlay-btn" onclick="closeOverlay('overlay2')">×</button>
+            <button class="close-overlay-btn" id="close-overlay-2">×</button>
             <div class="overlay-header">Step 2: Generate Controls</div>
             <div class="overlay-body">
                 <p>After submitting your engagement information, double-click on the key business risk item that appears to automatically generate the risk control matrix below.</p>
@@ -118,6 +118,67 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Open overlay function
+        function openOverlay(overlayId) {
+            const overlay = document.getElementById(overlayId);
+            if (overlay) {
+                overlay.classList.add('active');
+            }
+        }
+
+        // Close overlay function
+        function closeOverlay(overlayId) {
+            const overlay = document.getElementById(overlayId);
+            if (overlay) {
+                overlay.classList.remove('active');
+            }
+        }
+
+        // Wait for DOM to load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Help button 1
+            const helpBtn1 = document.getElementById('help-btn-1');
+            if (helpBtn1) {
+                helpBtn1.addEventListener('click', function() {
+                    openOverlay('overlay1');
+                });
+            }
+
+            // Help button 2
+            const helpBtn2 = document.getElementById('help-btn-2');
+            if (helpBtn2) {
+                helpBtn2.addEventListener('click', function() {
+                    openOverlay('overlay2');
+                });
+            }
+
+            // Close button 1
+            const closeBtn1 = document.getElementById('close-overlay-1');
+            if (closeBtn1) {
+                closeBtn1.addEventListener('click', function() {
+                    closeOverlay('overlay1');
+                });
+            }
+
+            // Close button 2
+            const closeBtn2 = document.getElementById('close-overlay-2');
+            if (closeBtn2) {
+                closeBtn2.addEventListener('click', function() {
+                    closeOverlay('overlay2');
+                });
+            }
+
+            // Close overlay when clicking outside the content
+            const overlays = document.querySelectorAll('.overlay');
+            overlays.forEach(overlay => {
+                overlay.addEventListener('click', function(e) {
+                    if (e.target === overlay) {
+                        closeOverlay(overlay.id);
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
