@@ -1,184 +1,188 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* --- 1. Font Import & Global Styles --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    min-height: 100vh;
-    padding: 20px;
-}
-
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.header {
-    background: white;
-    padding: 20px 30px;
-    border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
-    display: inline-block;
-}
-
-.header h1 {
-    color: #4a90e2;
-    font-size: 2.5em;
-    font-weight: 600;
-}
-
-.main-content {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 40px;
-    align-items: start;
-}
-
-.left-section {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.mascot-container {
-    background: white;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.mascot-placeholder {
-    width: 200px;
-    height: 200px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 20px;
-    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f4f6; /* bg-gray-100 */
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-size: 14px;
-    text-align: center;
-    padding: 20px;
+    min-height: 100vh;
+    padding: 1rem;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-.description-box {
-    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-    padding: 20px 40px;
-    border-radius: 50px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
-.description-box p {
-    color: white;
-    font-size: 1.1em;
-    font-weight: 500;
+/* --- 2. Main Layout Containers --- */
+
+.webapp-container {
+    background-color: #ffffff; /* bg-white */
+    border-radius: 1rem; /* rounded-2xl */
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); /* shadow-xl */
+    padding: 2rem; /* p-8 */
+    width: 100%;
+    max-width: 72rem; /* max-w-6xl */
 }
 
-.right-section {
+.main-content-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* grid-cols-1 */
+    gap: 3rem; /* gap-12 */
+    align-items: start;
+}
+
+/* --- 3. Title --- */
+
+.title-container {
+    margin-bottom: 2.5rem; /* mb-10 */
+}
+
+.title-box {
+    display: inline-block;
+    background-color: #f3f4f6; /* bg-gray-100 */
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* shadow-md */
+}
+
+.title-box h1 {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 700; /* font-bold */
+    color: #4338ca; /* text-indigo-700 */
+    padding: 1rem 1.5rem; /* px-6 py-4 */
+    margin: 0;
+}
+
+/* --- 4. Left Column (Image & Description) --- */
+
+.left-column {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2.5rem; /* space-y-10 replacement */
+    padding-top: 1rem; /* pt-4 */
 }
 
-.steps-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+.image-placeholder {
+    width: 13rem; /* w-52 */
+    height: 13rem; /* h-52 */
+    background-color: #e5e7eb; /* bg-gray-200 */
+    border-radius: 1rem; /* rounded-2xl */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05); /* shadow-inner */
+}
+
+.image-placeholder img {
+    border-radius: 1rem; /* rounded-2xl */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.description-banner {
+    background-color: #16a34a; /* bg-green-600 */
+    color: #ffffff; /* text-white */
+    font-weight: 500; /* font-medium */
+    padding: 0.75rem 2rem; /* py-3 px-8 */
+    border-radius: 9999px; /* rounded-full */
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* shadow-lg */
+    text-align: center;
+}
+
+/* --- 5. Right Column (Steps & Button) --- */
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* space-y-6 */
 }
 
 .step-card {
-    background: white;
-    border-radius: 20px;
+    background-color: #ffffff; /* bg-white */
+    border-radius: 1rem; /* rounded-2xl */
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* shadow-lg */
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.step-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid #e5e7eb; /* border border-gray-200 */
 }
 
 .step-header {
-    padding: 25px 20px;
-    color: white;
-    font-weight: 600;
-    font-size: 1.3em;
-    text-align: center;
+    background-color: #0d9488; /* bg-teal-600 */
+    color: #ffffff; /* text-white */
+    padding: 1rem; /* p-4 */
 }
 
-.step-card:nth-child(1) .step-header {
-    background: linear-gradient(135deg, #4a90e2 0%, #5cb3cc 100%);
-}
-
-.step-card:nth-child(2) .step-header {
-    background: linear-gradient(135deg, #2196F3 0%, #4CAF50 100%);
-}
-
-.step-card:nth-child(3) .step-header {
-    background: linear-gradient(135deg, #1976D2 0%, #2E7D32 100%);
+.step-header h2 {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 700; /* font-bold */
+    margin: 0;
 }
 
 .step-body {
-    padding: 25px 20px;
-    background: white;
-    color: #555;
-    font-size: 1em;
-    line-height: 1.6;
-    text-align: center;
-    min-height: 120px;
+    padding: 1.25rem; /* p-5 */
+    color: #374151; /* text-gray-700 */
+    font-size: 1rem; /* text-base */
+}
+
+.step-body p {
+    margin: 0;
 }
 
 .start-button-container {
-    text-align: center;
-    margin-top: 20px;
+    padding-top: 1.5rem; /* pt-6 */
+    display: flex;
+    justify-content: center;
 }
 
 .start-button {
-    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
-    color: white;
-    border: none;
-    padding: 18px 60px;
-    font-size: 1.3em;
-    font-weight: 600;
-    border-radius: 50px;
+    background-color: #2563eb; /* bg-blue-600 */
+    color: #ffffff; /* text-white */
+    font-weight: 700; /* font-bold */
+    padding: 0.75rem 4rem; /* py-3 px-16 */
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* shadow-lg */
+    transition: all 300ms;
+    transform: scale(1);
     cursor: pointer;
-    box-shadow: 0 4px 20px rgba(74, 144, 226, 0.4);
-    transition: all 0.3s ease;
+    border: none;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
 }
 
 .start-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 25px rgba(74, 144, 226, 0.5);
+    background-color: #1d4ed8; /* hover:bg-blue-700 */
+    transform: scale(1.05); /* hover:scale-105 */
 }
 
-.start-button:active {
-    transform: translateY(0);
+
+/* --- 6. Responsive Adjustments --- */
+
+@media (min-width: 768px) { /* md: breakpoint */
+    body {
+        padding: 2rem; /* md:p-8 */
+    }
+
+    .webapp-container {
+        padding: 3rem; /* md:p-12 */
+    }
+
+    .title-box h1 {
+        font-size: 1.875rem; /* md:text-3xl */
+    }
+
+    .image-placeholder {
+        width: 16rem; /* md:w-64 */
+        height: 16rem; /* md:h-64 */
+    }
 }
 
-@media (max-width: 1024px) {
-    .main-content {
-        grid-template-columns: 1fr;
-    }
-
-    .steps-container {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-    .header h1 {
-        font-size: 1.8em;
-    }
-
-    .mascot-placeholder {
-        width: 150px;
-        height: 150px;
+@media (min-width: 1024px) { /* lg: breakpoint */
+    .main-content-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* lg:grid-cols-2 */
     }
 }
