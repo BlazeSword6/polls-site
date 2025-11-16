@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Risk Control Matrix</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header-section">
+            <div class="logo-left">
+                <img src="logo-left.png" alt="Logo" class="logo-img">
+            </div>
+            <h1 class="main-title">AI Risk Control Matrix</h1>
+        </div>
+
+        <div class="gradient-line"></div>
+
+        <!-- Main Content Area -->
+        <div class="content-grid">
+            <!-- Left Panel: Engagement Information -->
+            <div class="panel engagement-panel">
+                <div class="panel-header">Engagement Information</div>
+                <div class="panel-body">
+                    <p class="instruction-text">Step 1: Insert the engagement info below and click submit</p>
+                    
+                    <div class="form-group">
+                        <label>Country</label>
+                        <select class="form-input">
+                            <option>Select countries...</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Audit title</label>
+                        <input type="text" class="form-input" placeholder="Enter audit title...">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Audit objectives</label>
+                        <textarea class="form-textarea" placeholder="Enter audit objectives or click the lightbulb button to auto generate"></textarea>
+                    </div>
+
+                    <div class="button-group">
+                        <button class="suggest-btn">💡 Suggest Audit Scope</button>
+                        <button class="submit-btn">Submit</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel: Key Business Risk -->
+            <div class="panel risk-panel">
+                <div class="panel-header">
+                    Key Business Risk
+                    <button class="close-btn">Close</button>
+                </div>
+                <div class="panel-body">
+                    <p class="instruction-text">Step 2: Double click the key business risk below to generate the controls</p>
+                    
+                    <div class="risk-box">
+                        <div class="risk-item">Key Business Risk - Pending creation</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls Table -->
+        <div class="controls-section">
+            <table class="controls-table">
+                <thead>
+                    <tr>
+                        <th>Control Name</th>
+                        <th>Control Description</th>
+                        <th>Risk</th>
+                        <th>Source</th>
+                        <th>Suggested test steps</th>
+                        <th>Suggested analytic test steps</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="6" class="empty-state">RCM - Pending creation</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
