@@ -1,132 +1,186 @@
+/* ========================================
+   BASIC RESET AND BODY SETUP
+   ======================================== */
+
+/* Reset default browser spacing so we start fresh */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body styling - this is the background of the entire page */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    padding: 15px;
-    overflow-y: auto;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-family: Arial, sans-serif;  /* Use Arial font throughout */
+    background-color: #f5f5f5;  /* Light grey background */
+    padding: 15px;  /* Small padding around the edges */
+    overflow-y: auto;  /* Allow vertical scrolling if needed */
+    min-height: 100vh;  /* Make body at least as tall as the viewport */
+    display: flex;  /* Use flexbox for centering */
+    align-items: center;  /* Center content vertically */
+    justify-content: center;  /* Center content horizontally */
 }
 
-.container {
-    max-width: 1200px;
+
+/* ========================================
+   MAIN CONTAINER
+   ======================================== */
+
+/* The main container holds all the content */
+.mainContainer {
+    max-width: 1200px;  /* Don't let it get too wide on large screens */
+    width: 100%;  /* But allow it to be full width up to the max */
+    margin: 0 auto;  /* Center the container */
+}
+
+
+/* ========================================
+   CONTENT SPLIT - LEFT AND RIGHT SIDES
+   ======================================== */
+
+/* This splits the page into left side (logo + title) and right side (description + button) */
+.contentSplit {
+    display: flex;  /* Use flexbox to create two columns */
+    align-items: center;  /* Vertically center both sides */
+    justify-content: center;  /* Horizontally center the content */
+    gap: 80px;  /* Space between left and right sides */
     width: 100%;
-    margin: 0 auto;
 }
 
-.content-split {
+
+/* ========================================
+   LEFT SIDE STYLING
+   ======================================== */
+
+/* Left side contains the title (top) and mascot image (bottom) */
+.leftSide {
+    flex: 1;  /* Take up equal space with right side */
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 80px;
-    width: 100%;
+    flex-direction: column;  /* Stack title above mascot */
+    justify-content: center;  /* Center vertically */
+    align-items: center;  /* Center horizontally */
+    gap: 20px;  /* Space between title and mascot */
 }
 
-.left-side {
-    flex: 1;
+/* Title styling - the "Sample Webapp" text */
+.titleArea {
+    background-color: white;  /* White background */
+    border: 2px solid #ddd;  /* Light grey border */
+    border-radius: 15px;  /* Rounded corners */
+    padding: 12px 30px;  /* Space inside the box */
+}
+
+.titleArea h1 {
+    color: #4a90e2;  /* Blue text color */
+    font-size: 2em;  /* Font size */
+    font-weight: normal;  /* Not bold */
+    font-family: Arial, sans-serif;
+    margin: 0;  /* Remove default margin */
+}
+
+/* Mascot/logo image styling */
+.mascotArea {
+    text-align: center;  /* Center the image */
+}
+
+.mascotImage {
+    width: 176px;  /* 20% smaller than original 220px */
+    height: 176px;  /* Keep it square */
+    object-fit: contain;  /* Don't distort the image */
+    cursor: pointer;  /* Show hand cursor on hover */
+    transition: transform 0.2s ease;  /* Smooth animation */
+    display: block;  /* Make it a block element */
+}
+
+/* When you hover over the mascot, it grows slightly */
+.mascotImage:hover {
+    transform: scale(1.05);  /* Make it 5% bigger */
+}
+
+
+/* ========================================
+   RIGHT SIDE STYLING
+   ======================================== */
+
+/* Right side contains the description text (top) and start button (bottom) */
+.rightSide {
+    flex: 1;  /* Take up equal space with left side */
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+    flex-direction: column;  /* Stack description above button */
+    justify-content: center;  /* Center vertically */
+    align-items: center;  /* Center horizontally */
+    gap: 30px;  /* Space between description and button */
 }
 
-.right-side {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-}
-
-.mascot-area {
-    text-align: center;
-}
-
-.mascot-image {
-    width: 220px;
-    height: 220px;
-    object-fit: contain;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-    display: block;
-}
-
-.mascot-image:hover {
-    transform: scale(1.05);
-}
-
-.title-area {
-    background-color: white;
-    border: 2px solid #ddd;
-    border-radius: 15px;
-    padding: 12px 30px;
-}
-
-.title-area h1 {
-    color: #4a90e2;
-    font-size: 2em;
-    font-weight: normal;
+/* Green description text styling */
+.descriptionText {
+    color: #4CAF50;  /* Green text color */
+    font-size: 1.2em;  /* Slightly larger text */
+    font-weight: 600;  /* Semi-bold */
     font-family: Arial, sans-serif;
-    margin: 0;
+    margin: 0;  /* Remove default margin */
+    text-align: center;  /* Center the text */
+    max-width: 375px;  /* Increased by 25% from 300px - controls line wrapping */
 }
 
-.description-text {
-    color: #4CAF50;
-    font-size: 1.2em;
-    font-weight: 600;
+/* Container for the start button */
+.buttonContainer {
+    text-align: center;  /* Center the button */
+}
+
+/* The blue "Start" button */
+.startBtn {
+    background-color: #4a90e2;  /* Blue background */
+    color: white;  /* White text */
+    border: none;  /* No border */
+    border-radius: 10px;  /* Rounded corners */
+    padding: 14px 48px;  /* Space inside the button */
+    font-size: 1.15em;  /* Font size */
+    font-weight: bold;  /* Bold text */
+    cursor: pointer;  /* Show hand cursor on hover */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);  /* Shadow for depth */
     font-family: Arial, sans-serif;
-    margin: 0;
-    text-align: center;
+    transition: transform 0.2s ease, background-color 0.2s ease;  /* Smooth animations */
 }
 
-.button-container {
-    text-align: center;
+/* When you hover over the button, it changes color and lifts up slightly */
+.startBtn:hover {
+    background-color: #357abd;  /* Darker blue */
+    transform: translateY(-2px);  /* Move up 2 pixels */
 }
 
-.start-btn {
-    background-color: #4a90e2;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 14px 48px;
-    font-size: 1.15em;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-    font-family: Arial, sans-serif;
-    transition: transform 0.2s ease, background-color 0.2s ease;
+/* When you click the button, it presses down slightly */
+.startBtn:active {
+    transform: translateY(1px);  /* Move down 1 pixel */
 }
 
-.start-btn:hover {
-    background-color: #357abd;
-    transform: translateY(-2px);
-}
 
-.start-btn:active {
-    transform: translateY(1px);
-}
+/* ========================================
+   RESPONSIVE DESIGN FOR MOBILE
+   ======================================== */
 
+/* When screen is smaller than 768px (tablets and phones) */
 @media (max-width: 768px) {
-    .title-area h1 {
+    
+    /* Make title text smaller on mobile */
+    .titleArea h1 {
         font-size: 1.6em;
     }
 
-    .content-split {
-        flex-direction: column;
-        gap: 30px;
+    /* Stack left and right sides vertically on mobile */
+    .contentSplit {
+        flex-direction: column;  /* Change from side-by-side to stacked */
+        gap: 30px;  /* Smaller gap between sections */
     }
 
-    .mascot-image {
-        width: 180px;
-        height: 180px;
+    /* Make mascot image smaller on mobile */
+    .mascotImage {
+        width: 140px;  /* Reduced size for mobile */
+        height: 140px;
+    }
+    
+    /* Allow description text to use more width on mobile */
+    .descriptionText {
+        max-width: 90%;  /* Use most of the screen width */
     }
 }
