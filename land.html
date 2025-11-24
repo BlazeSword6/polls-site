@@ -7,25 +7,42 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="content-split">
-            <div class="left-side">
-                <div class="mascot-area">
-                    <img src="placeholder-mascot.png" alt="Mascot" class="mascot-image">
-                </div>
-                <div class="title-area">
+    <!-- Main container that holds everything on the page -->
+    <div class="mainContainer">
+        
+        <!-- Split content into two sides: left and right -->
+        <div class="contentSplit">
+            
+            <!-- LEFT SIDE: Contains the title and logo/mascot -->
+            <div class="leftSide">
+                
+                <!-- Title section - appears ABOVE the mascot -->
+                <div class="titleArea">
                     <h1>Sample Webapp</h1>
                 </div>
+                
+                <!-- Mascot/logo image section - appears BELOW the title -->
+                <div class="mascotArea">
+                    <img src="placeholder-mascot.png" alt="Mascot" class="mascotImage">
+                </div>
+                
             </div>
 
-            <div class="right-side">
-                <p class="description-text">One line of description about purpose here</p>
+            <!-- RIGHT SIDE: Contains the description text and start button -->
+            <div class="rightSide">
                 
-                <div class="button-container">
-                    <button class="start-btn">Start</button>
+                <!-- Green description text -->
+                <p class="descriptionText">One line of description about purpose here</p>
+                
+                <!-- Start button container -->
+                <div class="buttonContainer">
+                    <button class="startBtn">Start</button>
                 </div>
+                
             </div>
+            
         </div>
+        
     </div>
 </body>
 </html>
