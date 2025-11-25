@@ -1,175 +1,225 @@
+/* =================================================================
+   GLOBAL RESET AND BASE STYLES
+   Reset browser defaults and set base styling for the entire page
+   ================================================================= */
+
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box;  /* Makes width/height calculations include padding and border */
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    padding: 15px;
-    overflow-y: auto;
+    font-family: Arial, sans-serif;  /* Use Arial font throughout the entire page */
+    background-color: #f5f5f5;  /* Light grey background color */
+    padding: 15px;  /* Add some breathing room around the edges */
+    overflow-y: auto;  /* Allow vertical scrolling if content is taller than viewport */
 }
+
+
+/* =================================================================
+   MAIN CONTAINER
+   Central wrapper that holds all page content
+   ================================================================= */
 
 .container {
-    max-width: 80%;
-    width: 80%;
-    background-color: white;
-    padding: 25px;
-    border-radius: 8px;
-    margin: 0 auto;
+    max-width: 80%;  /* Don't exceed 80% of screen width */
+    width: 80%;  /* Default to 80% width */
+    background-color: white;  /* White background for content area */
+    padding: 25px;  /* Inner spacing */
+    border-radius: 8px;  /* Rounded corners */
+    margin: 0 auto;  /* Center horizontally */
 }
 
-/* Header Section */
+
+/* =================================================================
+   HEADER SECTION
+   Top section with logo and main title
+   ================================================================= */
+
 .header-section {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 15px;
+    display: flex;  /* Use flexbox for horizontal layout */
+    align-items: center;  /* Vertically center logo and title */
+    gap: 20px;  /* Space between logo and title */
+    margin-bottom: 15px;  /* Space below header before gradient line */
 }
 
+/* Logo container - prevents logo from shrinking */
 .logo-left {
-    flex-shrink: 0;
+    flex-shrink: 0;  /* Logo maintains its size */
 }
 
+/* Logo image styling - REDUCED BY 20% (was 80px, now 64px) */
 .logo-img {
-    height: 80px;
-    width: auto;
-    object-fit: contain;
+    height: 64px;  /* Height reduced by 20% from original 80px */
+    width: auto;  /* Width adjusts proportionally */
+    object-fit: contain;  /* Maintain aspect ratio without distortion */
 }
 
+/* Main page title - REDUCED BY 20% (was 2.5em, now 2em) */
 .main-title {
     font-family: Arial, sans-serif;
-    font-size: 2.5em;
-    color: #666;
-    font-weight: normal;
-    margin: 0;
+    font-size: 2em;  /* Font size reduced by 20% from original 2.5em */
+    color: #666;  /* Grey text color */
+    font-weight: normal;  /* Not bold */
+    margin: 0;  /* Remove default margin */
 }
 
+/* Decorative gradient line below header */
 .gradient-line {
-    height: 4px;
-    background: linear-gradient(to right, #0473ea, #38D200);
-    margin-bottom: 20px;
+    height: 4px;  /* Line thickness */
+    background: linear-gradient(to right, #0473ea, #38D200);  /* Blue to green gradient */
+    margin-bottom: 20px;  /* Space below line */
 }
 
-/* Content Grid */
+
+/* =================================================================
+   CONTENT GRID - TWO COLUMN LAYOUT
+   Creates side-by-side panels for Engagement Info and Key Business Risk
+   ================================================================= */
+
 .content-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-bottom: 20px;
+    display: grid;  /* Use CSS Grid for layout */
+    grid-template-columns: 1fr 1fr;  /* Two equal columns */
+    gap: 20px;  /* Space between columns */
+    margin-bottom: 20px;  /* Space below grid */
 }
 
-/* Panel Styling */
+
+/* =================================================================
+   PANEL STYLING
+   Common styles for all panel containers (Engagement Info, Risk, Toolkit)
+   ================================================================= */
+
 .panel {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    overflow: hidden;
+    border: 1px solid #ddd;  /* Light grey border */
+    border-radius: 5px;  /* Rounded corners */
+    overflow: hidden;  /* Clip content to rounded corners */
     display: flex;
-    flex-direction: column;
+    flex-direction: column;  /* Stack header and body vertically */
 }
 
+/* Panel header - blue gradient bar at top of each panel */
 .panel-header {
-    background: linear-gradient(to right, #2196F3, #0473ea);
-    color: white;
-    padding: 12px 20px;
-    font-size: 1.1em;
-    font-weight: bold;
+    background: linear-gradient(to right, #2196F3, #0473ea);  /* Blue gradient */
+    color: white;  /* White text */
+    padding: 12px 20px;  /* Inner spacing */
+    font-size: 1.1em;  /* Slightly larger text */
+    font-weight: bold;  /* Bold text */
     font-family: Arial, sans-serif;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 45px;
+    justify-content: space-between;  /* Space out title and any buttons */
+    align-items: center;  /* Vertically center content */
+    height: 45px;  /* Fixed height for consistency */
     box-sizing: border-box;
 }
 
+/* Clear button in Risk panel header */
 .clear-btn {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);  /* Semi-transparent white */
     color: white;
     border: 1px solid white;
     padding: 4px 12px;
     border-radius: 4px;
-    cursor: pointer;
+    cursor: pointer;  /* Hand cursor on hover */
     font-family: Arial, sans-serif;
     font-size: 0.85em;
-    transition: background-color 0.2s ease;
-    flex-shrink: 0;
+    transition: background-color 0.2s ease;  /* Smooth hover effect */
+    flex-shrink: 0;  /* Don't shrink if space is tight */
     height: 28px;
     line-height: 1;
 }
 
 .clear-btn:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.3);  /* Slightly more opaque on hover */
 }
 
+/* Panel body - main content area of each panel */
 .panel-body {
-    padding: 20px;
-    background-color: #f9f9f9;
-    flex: 1;
+    padding: 20px;  /* Inner spacing */
+    background-color: #f9f9f9;  /* Very light grey background */
+    flex: 1;  /* Take up remaining space in panel */
 }
+
+
+/* =================================================================
+   INSTRUCTION ROW
+   Row with step instructions and help (?) button
+   ================================================================= */
 
 .instruction-row {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 15px;
+    align-items: center;  /* Vertically center text and button */
+    justify-content: space-between;  /* Push button to the right */
+    gap: 10px;  /* Space between text and button */
+    margin-bottom: 15px;  /* Space below instruction row */
 }
 
+/* Green circular help button with ? symbol */
 .help-btn {
-    background-color: #38D200;
+    background-color: #38D200;  /* Green background */
     color: white;
     border: none;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    cursor: pointer;
+    width: 24px;  /* Fixed width */
+    height: 24px;  /* Fixed height - creates perfect circle */
+    border-radius: 50%;  /* Make it circular */
+    cursor: pointer;  /* Hand cursor on hover */
     font-family: Arial, sans-serif;
     font-size: 0.9em;
     font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
-    transition: background-color 0.2s ease;
+    flex-shrink: 0;  /* Don't shrink button */
+    transition: background-color 0.2s ease;  /* Smooth hover effect */
 }
 
 .help-btn:hover {
-    background-color: #2eb800;
+    background-color: #2eb800;  /* Darker green on hover */
 }
 
+/* Instruction text - the step descriptions */
 .instruction-text {
     font-family: Arial, sans-serif;
-    color: #666;
+    color: #666;  /* Grey text */
     font-size: 0.95em;
     margin: 0;
-    flex: 1;
+    flex: 1;  /* Take up available space */
 }
 
-/* Form Elements */
+
+/* =================================================================
+   FORM ELEMENTS
+   Styling for all form inputs, labels, and groups
+   ================================================================= */
+
+/* Form group - container for each label + input pair */
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 15px;  /* Space between form fields */
 }
 
+/* Form labels - text above inputs */
 .form-group label {
-    display: block;
+    display: block;  /* Take full width */
     font-family: Arial, sans-serif;
     font-weight: bold;
-    color: #333;
-    margin-bottom: 5px;
+    color: #333;  /* Dark grey text */
+    margin-bottom: 5px;  /* Space between label and input */
     font-size: 0.95em;
 }
 
+/* Standard text/select inputs */
 .form-input {
-    width: 100%;
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    width: 100%;  /* Full width of container */
+    padding: 8px 12px;  /* Inner spacing */
+    border: 1px solid #ccc;  /* Light grey border */
+    border-radius: 4px;  /* Slightly rounded corners */
     font-family: Arial, sans-serif;
     font-size: 0.95em;
     background-color: white;
 }
 
+/* Text area inputs (multi-line) */
 .form-textarea {
     width: 100%;
     padding: 8px 12px;
@@ -177,20 +227,101 @@ body {
     border-radius: 4px;
     font-family: Arial, sans-serif;
     font-size: 0.95em;
-    min-height: 100px;
-    resize: vertical;
+    min-height: 100px;  /* Minimum height */
+    resize: vertical;  /* Allow vertical resizing only */
     background-color: white;
 }
 
-/* Buttons */
-.button-group {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
+/* File upload inputs */
+.file-input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 0.95em;
+    background-color: white;
+    cursor: pointer;
 }
 
+/* Helper text below inputs - provides additional guidance */
+.helper-text {
+    display: block;
+    font-size: 0.85em;
+    color: #888;  /* Light grey text */
+    margin-top: 5px;
+    font-family: Arial, sans-serif;
+    font-style: italic;
+}
+
+
+/* =================================================================
+   RADIO BUTTONS AND CHECKBOXES
+   Custom styling for radio and checkbox inputs
+   ================================================================= */
+
+/* Container for radio button group */
+.radio-group {
+    display: flex;
+    flex-direction: column;  /* Stack radio buttons vertically */
+    gap: 8px;  /* Space between each option */
+}
+
+/* Individual radio button label */
+.radio-label {
+    display: flex;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-size: 0.95em;
+    color: #333;
+    font-weight: normal;  /* Not bold like field labels */
+    cursor: pointer;
+}
+
+.radio-label input[type="radio"] {
+    margin-right: 8px;  /* Space between radio button and text */
+    cursor: pointer;
+}
+
+/* Container for checkbox group */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;  /* Stack checkboxes vertically */
+    gap: 8px;  /* Space between each option */
+}
+
+/* Individual checkbox label */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-size: 0.95em;
+    color: #333;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-right: 8px;  /* Space between checkbox and text */
+    cursor: pointer;
+}
+
+
+/* =================================================================
+   BUTTONS
+   Styling for all button types throughout the page
+   ================================================================= */
+
+/* Button group - container for multiple buttons */
+.button-group {
+    display: flex;
+    gap: 10px;  /* Space between buttons */
+    margin-top: 20px;  /* Space above button group */
+}
+
+/* Suggest button - blue with lightbulb emoji */
 .suggest-btn {
-    background-color: #0473ea;
+    background-color: #0473ea;  /* Blue background */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -202,15 +333,16 @@ body {
     transition: background-color 0.2s ease;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 5px;  /* Space between emoji and text */
 }
 
 .suggest-btn:hover {
-    background-color: #0360c7;
+    background-color: #0360c7;  /* Darker blue on hover */
 }
 
+/* Submit button - grey */
 .submit-btn {
-    background-color: #666;
+    background-color: #666;  /* Grey background */
     color: white;
     border: none;
     padding: 10px 30px;
@@ -223,49 +355,158 @@ body {
 }
 
 .submit-btn:hover {
-    background-color: #555;
+    background-color: #555;  /* Darker grey on hover */
 }
 
-/* Risk Panel */
+
+/* =================================================================
+   RISK PANEL SPECIFIC STYLES
+   Styles unique to the Key Business Risk panel
+   ================================================================= */
+
+/* Container for risk items */
 .risk-box {
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 15px;
-    min-height: 200px;
+    min-height: 200px;  /* Minimum height to match engagement panel */
 }
 
+/* Individual risk item */
 .risk-item {
-    background-color: #e3f2fd;
-    border: 1px solid #90caf9;
+    background-color: #e3f2fd;  /* Light blue background */
+    border: 1px solid #90caf9;  /* Medium blue border */
     padding: 10px 15px;
     border-radius: 5px;
     font-family: Arial, sans-serif;
     color: #333;
-    cursor: pointer;
+    cursor: pointer;  /* Clickable cursor */
     transition: background-color 0.2s ease;
 }
 
 .risk-item:hover {
-    background-color: #bbdefb;
+    background-color: #bbdefb;  /* Darker blue on hover */
 }
 
-/* Controls Table */
+
+/* =================================================================
+   TOOLKIT SECTION
+   Full-width panel below the two-column grid
+   Contains various form control examples
+   ================================================================= */
+
+.toolkit-section {
+    margin-top: 20px;  /* Space above toolkit section */
+}
+
+/* Toolkit panel - similar to other panels but full width */
+.toolkit-panel {
+    /* Inherits all .panel styles */
+}
+
+/* Two-column grid layout for toolkit elements */
+.toolkit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* Two equal columns */
+    gap: 30px;  /* Space between columns */
+    margin-top: 15px;  /* Space below instruction row */
+}
+
+/* Individual columns within toolkit grid */
+.toolkit-column {
+    display: flex;
+    flex-direction: column;  /* Stack form groups vertically */
+    gap: 0;  /* No extra gap - form-group margins handle spacing */
+}
+
+/* Action buttons at bottom of toolkit */
+.toolkit-actions {
+    display: flex;
+    justify-content: flex-end;  /* Align buttons to the right */
+    gap: 10px;  /* Space between buttons */
+    margin-top: 25px;  /* Space above buttons */
+    padding-top: 20px;  /* Extra padding above */
+    border-top: 1px solid #ddd;  /* Separator line above buttons */
+}
+
+/* Download button - blue with download emoji */
+.download-btn {
+    background-color: #0473ea;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 0.95em;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.download-btn:hover {
+    background-color: #0360c7;
+}
+
+/* Reset button - grey with refresh emoji */
+.reset-btn {
+    background-color: #999;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 0.95em;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.reset-btn:hover {
+    background-color: #888;
+}
+
+/* Apply button - green with checkmark emoji */
+.apply-btn {
+    background-color: #38D200;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 0.95em;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.apply-btn:hover {
+    background-color: #2eb800;
+}
+
+
+/* =================================================================
+   CONTROLS TABLE
+   Large table at bottom showing risk control matrix
+   ================================================================= */
+
 .controls-section {
-    margin-top: 20px;
+    margin-top: 20px;  /* Space above table */
 }
 
 .controls-table {
-    width: 100%;
-    border-collapse: collapse;
+    width: 100%;  /* Full width */
+    border-collapse: collapse;  /* Remove spacing between cells */
     background-color: white;
-    border: 1px solid #ddd;
+    border: 1px solid #ddd;  /* Outer border */
 }
 
+/* Table header section */
 .controls-table thead {
-    background-color: #38D200;
+    background-color: #38D200;  /* Green header background */
 }
 
+/* Table header cells */
 .controls-table th {
     padding: 12px;
     text-align: left;
@@ -273,13 +514,14 @@ body {
     font-family: Arial, sans-serif;
     font-weight: bold;
     font-size: 0.95em;
-    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, 0.3);  /* Separator between headers */
 }
 
 .controls-table th:last-child {
-    border-right: none;
+    border-right: none;  /* No border on last column */
 }
 
+/* Table data cells */
 .controls-table td {
     padding: 12px;
     border: 1px solid #ddd;
@@ -288,41 +530,51 @@ body {
     color: #333;
 }
 
+/* Empty state message when table has no data */
 .empty-state {
     text-align: center;
-    color: #999;
+    color: #999;  /* Light grey text */
     font-style: italic;
-    padding: 30px !important;
+    padding: 30px !important;  /* Override default padding */
 }
 
-/* Overlay Styles */
+
+/* =================================================================
+   OVERLAY MODALS
+   Popup overlays that appear when help (?) buttons are clicked
+   ================================================================= */
+
+/* Overlay background - covers entire screen */
 .overlay {
-    display: none;
-    position: fixed;
+    display: none;  /* Hidden by default */
+    position: fixed;  /* Fixed position relative to viewport */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    align-items: center;
-    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);  /* Semi-transparent black backdrop */
+    z-index: 1000;  /* Appear above all other content */
+    align-items: center;  /* Center content vertically */
+    justify-content: center;  /* Center content horizontally */
 }
 
+/* Active state - shown when overlay is triggered */
 .overlay.active {
-    display: flex;
+    display: flex;  /* Show and enable flexbox centering */
 }
 
+/* Overlay content box - the white modal card */
 .overlay-content {
     background-color: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    max-width: 500px;
-    width: 90%;
-    position: relative;
+    border-radius: 20px;  /* Rounded corners */
+    overflow: hidden;  /* Clip content to rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);  /* Drop shadow for depth */
+    max-width: 500px;  /* Maximum width */
+    width: 90%;  /* Default to 90% of screen width */
+    position: relative;  /* For positioning close button */
 }
 
+/* Close button (X) in top right of overlay */
 .close-overlay-btn {
     position: absolute;
     top: 10px;
@@ -337,15 +589,16 @@ body {
     width: 30px;
     height: 30px;
     transition: opacity 0.2s ease;
-    z-index: 1;
+    z-index: 1;  /* Appear above overlay header */
 }
 
 .close-overlay-btn:hover {
-    opacity: 0.7;
+    opacity: 0.7;  /* Slight fade on hover */
 }
 
+/* Overlay header - colored bar at top */
 .overlay-header {
-    background: linear-gradient(to right, #0473ea, #38D200);
+    background: linear-gradient(to right, #0473ea, #38D200);  /* Blue to green gradient */
     color: white;
     padding: 20px;
     font-size: 1.3em;
@@ -354,28 +607,47 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* Overlay body - main content area */
 .overlay-body {
     background-color: white;
     padding: 25px;
     color: #333;
     font-size: 1em;
-    line-height: 1.6;
+    line-height: 1.6;  /* Comfortable reading height */
     text-align: center;
     font-family: Arial, sans-serif;
 }
 
-/* Responsive */
+
+/* =================================================================
+   RESPONSIVE DESIGN
+   Adjustments for smaller screens (tablets and phones)
+   ================================================================= */
+
 @media (max-width: 1200px) {
+    /* Increase container width on smaller screens */
     .container {
         max-width: 95%;
         width: 95%;
     }
 
+    /* Stack two-column layouts vertically on smaller screens */
     .content-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr;  /* Single column layout */
     }
 
+    .toolkit-grid {
+        grid-template-columns: 1fr;  /* Single column layout */
+    }
+
+    /* Reduce title size on smaller screens */
     .main-title {
-        font-size: 2em;
+        font-size: 1.6em;
+    }
+
+    /* Stack toolkit action buttons vertically on small screens */
+    .toolkit-actions {
+        flex-direction: column;  /* Stack vertically */
+        align-items: stretch;  /* Buttons take full width */
     }
 }
