@@ -7,30 +7,50 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- =================================================================
+         MAIN CONTAINER - Holds all page content
+         ================================================================= -->
     <div class="container">
-        <!-- Header Section -->
+        
+        <!-- =================================================================
+             HEADER SECTION - Logo and main page title
+             ================================================================= -->
         <div class="header-section">
+            <!-- Logo image on the left -->
             <div class="logo-left">
                 <img src="logo-left.png" alt="Logo" class="logo-img">
             </div>
+            
+            <!-- Main page title -->
             <h1 class="main-title">AI Risk Control Matrix</h1>
         </div>
 
+        <!-- Decorative gradient line separator -->
         <div class="gradient-line"></div>
 
-        <!-- Main Content Area -->
+        <!-- =================================================================
+             MAIN CONTENT AREA - Two-column grid layout
+             Left: Engagement Information
+             Right: Key Business Risk
+             ================================================================= -->
         <div class="content-grid">
-            <!-- Left Panel: Engagement Information -->
+            
+            <!-- ========== LEFT PANEL: ENGAGEMENT INFORMATION ========== -->
             <div class="panel engagement-panel">
+                <!-- Panel header with title -->
                 <div class="panel-header">
                     Engagement Information
                 </div>
+                
+                <!-- Panel body with form elements -->
                 <div class="panel-body">
+                    <!-- Instruction row with text and help button -->
                     <div class="instruction-row">
                         <p class="instruction-text">Step 1: Insert the engagement info below and click submit</p>
                         <button class="help-btn" id="help-btn-1">?</button>
                     </div>
                     
+                    <!-- Country selection dropdown -->
                     <div class="form-group">
                         <label>Country</label>
                         <select class="form-input">
@@ -38,16 +58,19 @@
                         </select>
                     </div>
 
+                    <!-- Audit title text input -->
                     <div class="form-group">
                         <label>Audit title</label>
                         <input type="text" class="form-input" placeholder="Enter audit title...">
                     </div>
 
+                    <!-- Audit objectives text area -->
                     <div class="form-group">
                         <label>Audit objectives</label>
                         <textarea class="form-textarea" placeholder="Enter audit objectives or click the lightbulb button to auto generate"></textarea>
                     </div>
 
+                    <!-- Action buttons: Suggest and Submit -->
                     <div class="button-group">
                         <button class="suggest-btn">💡 Suggest Audit Scope</button>
                         <button class="submit-btn">Submit</button>
@@ -55,18 +78,23 @@
                 </div>
             </div>
 
-            <!-- Right Panel: Key Business Risk -->
+            <!-- ========== RIGHT PANEL: KEY BUSINESS RISK ========== -->
             <div class="panel risk-panel">
+                <!-- Panel header with title and clear button -->
                 <div class="panel-header">
                     Key Business Risk
                     <button class="clear-btn">Clear</button>
                 </div>
+                
+                <!-- Panel body with risk information -->
                 <div class="panel-body">
+                    <!-- Instruction row with text and help button -->
                     <div class="instruction-row">
                         <p class="instruction-text">Step 2: Double click the key business risk below to generate the controls</p>
                         <button class="help-btn" id="help-btn-2">?</button>
                     </div>
                     
+                    <!-- Risk display box -->
                     <div class="risk-box">
                         <div class="risk-item">Key Business Risk - Pending creation</div>
                     </div>
@@ -74,7 +102,143 @@
             </div>
         </div>
 
-        <!-- Controls Table -->
+        <!-- =================================================================
+             TOOLKIT SECTION - Full-width panel with various form controls
+             This section demonstrates different input types users can utilize
+             ================================================================= -->
+        <div class="toolkit-section">
+            <div class="panel toolkit-panel">
+                <!-- Panel header with title -->
+                <div class="panel-header">
+                    Toolkit
+                </div>
+                
+                <!-- Panel body with various form controls -->
+                <div class="panel-body">
+                    <!-- Instruction row with text and help button -->
+                    <div class="instruction-row">
+                        <p class="instruction-text">Step 3: Use these tools to customize your analysis and gather additional data</p>
+                        <button class="help-btn" id="help-btn-3">?</button>
+                    </div>
+
+                    <!-- Grid layout for toolkit elements - Creates two columns -->
+                    <div class="toolkit-grid">
+                        
+                        <!-- ========== COLUMN 1: Left side toolkit elements ========== -->
+                        <div class="toolkit-column">
+                            
+                            <!-- Multi-select dropdown -->
+                            <div class="form-group">
+                                <label>Multi-select Options</label>
+                                <select class="form-input" multiple size="4">
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                    <option>Option 3</option>
+                                    <option>Option 4</option>
+                                </select>
+                                <span class="helper-text">Hold Ctrl/Cmd to select multiple</span>
+                            </div>
+
+                            <!-- Single select dropdown -->
+                            <div class="form-group">
+                                <label>Single Select</label>
+                                <select class="form-input">
+                                    <option>Choose one option...</option>
+                                    <option>Option A</option>
+                                    <option>Option B</option>
+                                    <option>Option C</option>
+                                </select>
+                            </div>
+
+                            <!-- Date picker input -->
+                            <div class="form-group">
+                                <label>Select Date</label>
+                                <input type="date" class="form-input">
+                            </div>
+
+                            <!-- Radio buttons group -->
+                            <div class="form-group">
+                                <label>Priority Level</label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="priority" value="high"> High
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="priority" value="medium" checked> Medium
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="priority" value="low"> Low
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ========== COLUMN 2: Right side toolkit elements ========== -->
+                        <div class="toolkit-column">
+                            
+                            <!-- File upload input -->
+                            <div class="form-group">
+                                <label>Upload Supporting Documents</label>
+                                <input type="file" class="file-input" multiple>
+                                <span class="helper-text">Accepts PDF, DOCX, XLSX files</span>
+                            </div>
+
+                            <!-- Searchable dropdown (uses datalist for basic search) -->
+                            <div class="form-group">
+                                <label>Search and Select Department</label>
+                                <input type="text" class="form-input" list="departments" placeholder="Start typing to search...">
+                                <datalist id="departments">
+                                    <option value="Finance">
+                                    <option value="Human Resources">
+                                    <option value="Information Technology">
+                                    <option value="Operations">
+                                    <option value="Marketing">
+                                    <option value="Sales">
+                                    <option value="Legal">
+                                    <option value="Compliance">
+                                </datalist>
+                            </div>
+
+                            <!-- Checkbox group for additional options -->
+                            <div class="form-group">
+                                <label>Analysis Options</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" checked> Include historical data
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox"> Generate detailed report
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox"> Export to Excel
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox"> Send email notifications
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Number input for quantitative data -->
+                            <div class="form-group">
+                                <label>Risk Threshold (%)</label>
+                                <input type="number" class="form-input" min="0" max="100" value="75" placeholder="Enter percentage...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action buttons for toolkit - Aligned to the right -->
+                    <div class="toolkit-actions">
+                        <button class="download-btn">📥 Download Results</button>
+                        <button class="reset-btn">🔄 Reset Toolkit</button>
+                        <button class="apply-btn">✓ Apply Settings</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =================================================================
+             CONTROLS TABLE - Displays the risk control matrix results
+             ================================================================= -->
         <div class="controls-section">
             <table class="controls-table">
                 <thead>
@@ -96,10 +260,14 @@
         </div>
     </div>
 
-    <!-- Overlay 1: Engagement Information Help -->
+    <!-- =================================================================
+         OVERLAY MODALS - Help popups that appear when ? buttons are clicked
+         ================================================================= -->
+    
+    <!-- Overlay 1: Help for Engagement Information (Step 1) -->
     <div id="overlay1" class="overlay">
         <div class="overlay-content">
-            <button class="close-overlay-btn" id="close-overlay-1">×</button>
+            <button class="close-overlay-btn" onclick="closeOverlay('overlay1')">×</button>
             <div class="overlay-header">Step 1: Configure</div>
             <div class="overlay-body">
                 <p>Upload your engagement information by filling in the required fields: Country, Audit title, and Audit objectives. Once completed, click the Submit button to proceed.</p>
@@ -107,10 +275,10 @@
         </div>
     </div>
 
-    <!-- Overlay 2: Key Business Risk Help -->
+    <!-- Overlay 2: Help for Key Business Risk (Step 2) -->
     <div id="overlay2" class="overlay">
         <div class="overlay-content">
-            <button class="close-overlay-btn" id="close-overlay-2">×</button>
+            <button class="close-overlay-btn" onclick="closeOverlay('overlay2')">×</button>
             <div class="overlay-header">Step 2: Generate Controls</div>
             <div class="overlay-body">
                 <p>After submitting your engagement information, double-click on the key business risk item that appears to automatically generate the risk control matrix below.</p>
@@ -118,67 +286,18 @@
         </div>
     </div>
 
-    <script>
-        // Open overlay function
-        function openOverlay(overlayId) {
-            const overlay = document.getElementById(overlayId);
-            if (overlay) {
-                overlay.classList.add('active');
-            }
-        }
+    <!-- Overlay 3: Help for Toolkit (Step 3) -->
+    <div id="overlay3" class="overlay">
+        <div class="overlay-content">
+            <button class="close-overlay-btn" onclick="closeOverlay('overlay3')">×</button>
+            <div class="overlay-header">Step 3: Customize Analysis</div>
+            <div class="overlay-body">
+                <p>Use the various toolkit options to customize your analysis. You can upload supporting documents, select multiple criteria, set date ranges, and configure analysis parameters. Once you've made your selections, click Apply Settings to update your risk control matrix.</p>
+            </div>
+        </div>
+    </div>
 
-        // Close overlay function
-        function closeOverlay(overlayId) {
-            const overlay = document.getElementById(overlayId);
-            if (overlay) {
-                overlay.classList.remove('active');
-            }
-        }
-
-        // Wait for DOM to load
-        document.addEventListener('DOMContentLoaded', function() {
-            // Help button 1
-            const helpBtn1 = document.getElementById('help-btn-1');
-            if (helpBtn1) {
-                helpBtn1.addEventListener('click', function() {
-                    openOverlay('overlay1');
-                });
-            }
-
-            // Help button 2
-            const helpBtn2 = document.getElementById('help-btn-2');
-            if (helpBtn2) {
-                helpBtn2.addEventListener('click', function() {
-                    openOverlay('overlay2');
-                });
-            }
-
-            // Close button 1
-            const closeBtn1 = document.getElementById('close-overlay-1');
-            if (closeBtn1) {
-                closeBtn1.addEventListener('click', function() {
-                    closeOverlay('overlay1');
-                });
-            }
-
-            // Close button 2
-            const closeBtn2 = document.getElementById('close-overlay-2');
-            if (closeBtn2) {
-                closeBtn2.addEventListener('click', function() {
-                    closeOverlay('overlay2');
-                });
-            }
-
-            // Close overlay when clicking outside the content
-            const overlays = document.querySelectorAll('.overlay');
-            overlays.forEach(overlay => {
-                overlay.addEventListener('click', function(e) {
-                    if (e.target === overlay) {
-                        closeOverlay(overlay.id);
-                    }
-                });
-            });
-        });
-    </script>
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
 </body>
 </html>
